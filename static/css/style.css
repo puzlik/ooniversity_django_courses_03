@@ -234,3 +234,71 @@ table{
 	color: #ffff4d;
 	font-style: italic;
 }
+
+.student-table table{
+	background-color: #effcef;
+	border-color: #516251;
+	border: 1px;
+}
+
+.student-table table > td {
+	text-align: center;
+}
+
+.head-stud-table th{
+	background-color: #ccf5cc;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+.head-stud-table th#address{
+	width: 200px;
+}
+.head-stud-table th#skype{
+	width: 150px;
+}
+
+.student-table a{
+	color: #333;
+}
+
+.student-table a:hover{
+	background-color: #ccf5cc;
+}
+
+.student-avatar{
+	width: 300px;
+	height: 300px;
+}
+
+.btn-group-st{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.student-table h5{
+	color: #191711;
+	font-size: 2em;
+	text-align: center;
+	font-family: Comic, Sans-Serif;
+}
+
+.student-table table > td {
+	text-align: center;
+}
+
+.head-stud-range-table th{
+	background-color: #ccf5cc;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+#full {
+	width: 500px;
+}
+
+#control_type{
+	width: 150px;
+}

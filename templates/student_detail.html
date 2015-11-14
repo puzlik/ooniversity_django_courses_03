@@ -33,14 +33,16 @@
 
 <div id="content_container">
 <h1>Ivanov Ivan</h1>
-<h6>Язык программирования Python набирает все большей популярности. И каждая группа pyBursa все увеличивается. Ниже приведет список топ-5 участников pyBursa на сегодня. С полным списком можете ознакомиться на сайте <a href="http://pybursa.com">pyBursa</a></h6>
+<div class="header_content_mainline">
+  <h6>Язык программирования Python набирает все большей популярности. И каждая группа pyBursa все увеличивается. Ниже приведет список топ-5 участников pyBursa на сегодня. С полным списком можете ознакомиться на сайте <a href="http://pybursa.com">pyBursa</a></h6>
+</div>
 <div class"student-avatar">
   <img src="../static/images/ivanov_avatar.jpg" />
 </div>
 <div class="btn-group btn-group-st" role="group" aria-label="Button1"> <h4>See in social network</h4> </div>
 <div class="student-table">
   <h5>Student's information</h5>
-  <table class="detail_information">
+  <table id="full">
     <tr>
       <td>Surname</td>
       <td>Ivanov</td>
@@ -87,15 +89,16 @@
     </tr>
   </table>
   <h6>Information about tasks and grades</h6>
-  <table class="tasks-table">
-    <tr>
+  <table>
+    <tr class="head-stud-range-table">
       <th>Course</th>
       <th>Week</th>
-      <th>Control Type</th>
+      <th id="control_type">Control Type</th>
       <th>Grade</th>
     </tr>
     <tr>
-      <td rowspan="6">Python PY103</td>
+      <td rowspan="7">Python PY103</td>
+    </tr>
     <tr>
       <td rowspan="3">Week1</td>
       <td>Tests</td>
@@ -121,7 +124,6 @@
     <tr>
       <td>Problem Task 4</td>
       <td>100%</td>
-    </tr>
     </tr>
   </table>
 </div>
@@ -149,8 +151,5 @@
   </div>
 </div>
 <div class="clearfix"> </div>
-<div class="footer">
-  <p class="lead"> See you <mark>later</mark> or <del>never</del></p>
-</div>
 </body>
 </html>
