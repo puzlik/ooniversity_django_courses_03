@@ -145,7 +145,8 @@ td{
 }
 
 table{
-	vertical-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .lead {
@@ -170,7 +171,7 @@ table{
 }
 .contact-person{
 	background-image: url(../images/person-card.jpeg);
-	background-size: 100%;
+	background-repeat: no-repeat;
 	background-color: #fff;
 	border: 0;
 	border-radius: 20px;
