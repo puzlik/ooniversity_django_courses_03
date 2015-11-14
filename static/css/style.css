@@ -80,10 +80,15 @@ body {
 	margin-bottom:10px;
 }
 
-.navbar-default .navbar-nav > li > a {
-  color: #191711;
+.navbar-default{
+	background-color: #252525;
 }
-
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover{
+	color: #ccf5cc;
+}
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus{
