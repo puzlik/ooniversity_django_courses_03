@@ -3,10 +3,11 @@
 <head>
 <title>pyBursa | Students</title>
 <meta charset="utf-8">
-
-<link rel="stylesheet" href="../static/css/bootstrap.min.css">
-<link rel="stylesheet" href="../static/css/style.css">
-<script src="../static/js/bootstrap.min.js"></script>
+{% load staticfiles %}
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
 </head>
 
 <body>
@@ -16,14 +17,14 @@
   <div class="container-fluid">
     <div class="navbar-header">
     <a class="navbar-brand" href="http://pybursa.com/">
-    <img class="logo-minions" alt="Logo Pretty Minions" src="../static/images/logo.jpg"></a>
+    <img class="logo-minions" alt="Logo Pretty Minions" src="{% static 'images/logo.jpg' %}"></a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="index.html">Main</a></li>
-        <li><a href="contact.html">Contacts</a></li>
-        <li class="active"><a href="student_list.html">Students</a></li>
+        <li><a href="/">Main</a></li>
+        <li><a href="{% url 'contact' %}">Contacts</a></li>
+        <li class="active"><a href="{% url 'student_list' %}">Students</a></li>
     </ul>
   </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -45,11 +46,11 @@
         <th id="skype">Skype</th>
       </tr>
       <tr>  
-        <td><a href="student_detail.html">1</a></td>
-        <td><a href="student_detail.html">Ivanov</a></td>
-        <td><a href="student_detail.html">Ivan</a></td>
-        <td><a href="student_detail.html">Kharkiv, Ukraine</a></td>
-        <td><a href="student_detail.html">ivan_ivanov</a></td>
+        <td><a href="{% url 'student_detail' %}">1</a></td>
+        <td><a href="{% url 'student_detail' %}">Ivanov</a></td>
+        <td><a href="{% url 'student_detail' %}">Ivan</a></td>
+        <td><a href="{% url 'student_detail' %}">Kharkiv, Ukraine</a></td>
+        <td><a href="{% url 'student_detail' %}">ivan_ivanov</a></td>
       </tr>
       <tr>
         <td>2</td>
