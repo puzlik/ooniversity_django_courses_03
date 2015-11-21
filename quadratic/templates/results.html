@@ -1,24 +1,27 @@
 <meta charset="utf-8">
 <h1>Quadratic Equation</h1>
-<p>Квадратное уравление: a*x^2 + b*x + c = 0 </p>
-	{% csrf_token %}
-<ul>
-	<li>a= {{ value_a }}</li>
-	{% if error_a %} <p>{{ error_a }}</p>{% endif %}
-	<li>b= {{ value_b }}</li>
-	{% if error_b %} <p>{{ error_b }} </p>{% endif %}
-	<li>c= {{ value_c }}</li>
-	{% if error_c %} <p>{{ error_c }} </p>{% endif %}
-</ul>
-{% if disc_eq %}
-	<p>Дискриминант: {{ disc_eq }}</p>
-	<p> {{ disc_text }} 
-		{% if first_root and second_root%} 
-		  x1 = {{ first_root }}, x2 = {{ second_root }}
-		{% endif %}
-		{% if first_root and not second_root%} 
-		  x1 = x2 = {{ first_root }} 
-		{% endif %}
-		
-	</p> 
-{% endif %}
+<div>
+	<p>Квадратное уравление: a*x^2 + b*x + c = 0 </p>
+		{% csrf_token %}
+	<ul>
+		<li>a = {{ value_a }}
+		{% if error_a %} {{ error_a }}{% endif %} </li>
+		<li>b = {{ value_b }}
+		{% if error_b %}{{ error_b }}{% endif %}</li>
+		<li>c = {{ value_c }}
+		{% if error_c %}{{ error_c }}{% endif %}</li>
+	</ul>
+	
+	{% if disc_eq %} <div>
+		<p>Дискриминант: {{ disc_eq }}</p>
+		<p> {{ disc_text }} 
+			{% if first_root and second_root%} 
+			  x1 = {{ first_root }}, x2 = {{ second_root }}
+			{% endif %}
+			{% if first_root and not second_root%} 
+			  x1 = x2 = {{ first_root }} 
+			{% endif %}	
+		</p> 
+		</div>
+	{% endif %}
+</div>

@@ -8,7 +8,7 @@ def quadratic_results(request):
 	def input_parameter(parameter_name = 'a'):
 		p = str(request.GET[parameter_name])
 		error_text = False
-		if p.replace('.', '').isdigit() or p.replace('-', '').isdigit():
+		if p.replace('-', '').isdigit():
 			res = int(p)
 			flag_digit = True
 		elif len(p) == 0:
