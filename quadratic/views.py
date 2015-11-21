@@ -26,7 +26,7 @@ def results(request):
 	coef_a = input_parameter('a')
 	if str(request.GET['a']) == '0':
 		flag_digits[0] = False
-		errors[0] = "коэффициент при первом слогаемом уравнения не может быть равным нулю"
+		errors[0] = "коэффициент при первом слагаемом уравнения не может быть равным нулю"
 	coef_b = input_parameter('b')
 	coef_c = input_parameter('c')
 
