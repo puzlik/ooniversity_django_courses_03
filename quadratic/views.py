@@ -67,6 +67,3 @@ def results(request):
 			'error_b': errors[1],
 			'error_c': errors[2],
 			})
-
-def index_eq(request):
-	return HttpResponse("Hello PYTHON!")
