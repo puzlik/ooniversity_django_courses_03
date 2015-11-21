@@ -1,7 +1,7 @@
 #-*-coding: utf-8-*-
 from django.shortcuts import render
 
-def results(request):
+def quadratic_results(request):
 	errors = list()
 	flag_digits = list()
 
