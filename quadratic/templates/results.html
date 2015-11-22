@@ -5,11 +5,11 @@
 		{% csrf_token %}
 	<ul>
 		<li>a = {{ value_a }}
-		{% if error_a %} {{ error_a }}{% endif %} </li>
+		{% if error_a %}<br />{{ error_a }}{% endif %} </li>
 		<li>b = {{ value_b }}
-		{% if error_b %}{{ error_b }}{% endif %}</li>
+		{% if error_b %}<br />{{ error_b }}{% endif %}</li>
 		<li>c = {{ value_c }}
-		{% if error_c %}{{ error_c }}{% endif %}</li>
+		{% if error_c %}<br />{{ error_c }}{% endif %}</li>
 	</ul>
 
 	{% if disc_eq %} <div>
