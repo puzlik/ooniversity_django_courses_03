@@ -5,7 +5,8 @@ from django.core.exceptions import ObjectDoesNotExist
 def detail(request, pk):
 	try:
 		course_now = Course.objects.get(pk=pk)
-		lessons = Lesson.objects.filter(course_id=pk)
+		#lessons = Lesson.objects.filter(course_id=pk)
+		lessons = course_now.lesson_set.all()
 		return render(request, 'courses/detail.html', {
 	    	"course_now": course_now,
 	    	"lessons": lessons,
