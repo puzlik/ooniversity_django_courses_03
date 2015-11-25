@@ -50,9 +50,9 @@
         <td><a href="{% url 'students:detail' student.id %}">{{ student.surname }} {{ student.name}} </a></td>
         <td>{{ student.address }}</td>
         <td>{{ student.skype }}</td>
-        <td> <ul>{% for s_courses in student.courses_id %}
-          <li><a href="{% url 'courses:detail' s_courses.id %}">{{ s_courses }}</a></li>
-          {% endfor %}</ul>
+        <td> {% for s_courses in student.courses_id %}
+          <p><a href="{% url 'courses:detail' s_courses.id %}">{{ s_courses }}</a></p>
+          {% endfor %}
         </td>
       </tr>
       {% endfor %}
