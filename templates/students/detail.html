@@ -57,9 +57,9 @@
       </tr>
       <tr>
         <td> курсы </td>
-        <td>  <ul>{% for s_courses in student_by_id.courses_id %}
-          <li><a href="{% url 'courses:detail' s_courses.id %}"> {{ s_courses }}</a></li>
-          {% endfor %}</ul> </td>
+        <td>  {% for s_courses in student_by_id.courses_id %}
+          <p><a href="{% url 'courses:detail' s_courses.id %}"> {{ s_courses }}</a></p>
+          {% endfor %}</td>
       </tr>
     </table>
   </div>
