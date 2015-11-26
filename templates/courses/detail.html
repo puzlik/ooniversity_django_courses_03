@@ -22,7 +22,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{% url 'index' %}">Main</a></li>
+        <li><a href="{% url 'index' %}">Main</a></li>
         <li><a href="{% url 'contact' %}">Contacts</a></li>
         <li><a href="{% url 'students:list_view' %}?course_id={{course_now.id}}">Students</a></li>
     </ul>
@@ -43,7 +43,7 @@
   </div>
   <div class="list-of-courses">
     <h3> Choose your future right --NOW--!</h3>
-    <table width="100%">
+    <table>
       <tr>
         <th class="head-name">Номер</th>
         <th class="head-name">Тема</th>
@@ -58,6 +58,6 @@
       {% endfor %}
     </table>
   </div>
-
+</div>
 </body>
 </html>
