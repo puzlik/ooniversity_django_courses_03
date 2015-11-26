@@ -36,14 +36,30 @@
     <div class="header_content_mainline">
       <h2>pyBursa</h2>
       <h1>Description</h1>
-    </div> 
-    <div id="header_content_tagline">
-      <p>Язык программирования Python 3 — это мощный инструмент для создания программ самого разнообразного назначения, доступный даже для новичков. С его помощью можно решать задачи различных типов. </p>
+      <div id="header_content_tagline">
+        <p>Язык программирования Python 3 — это мощный инструмент для создания программ самого разнообразного назначения, доступный даже для новичков. С его помощью можно решать задачи различных типов. </p>
+      </div>
     </div>   
     <div id="img-desc">
       <img src="{% static 'images/pic1.jpg' %}" alt="demotivator" />
     </div>
   </div>
+  <div class="list-of-courses">
+    <h3> Choose your future right --NOW--!</h3>
+    <table width="100%">
+      <tr>
+        <th class="head-name">Курс</th>
+        <th class="head-name">Описание</th>
+      </tr>
+      {% for course in courses %}
+      <tr>
+        <td><a href="{% url 'courses:detail' course.id %}" class="ptn">{{ course.name }}</a></td>
+        <td>{{ course.short_description }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <div class="clearfix"></div>
   <div class="header_lower">  
     <div class="header_content_boxline">
       <h1>Program</h1>
