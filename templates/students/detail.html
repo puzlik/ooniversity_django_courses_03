@@ -22,7 +22,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{% url 'index' %}">Main</a></li>
+        <li><a href="{% url 'index' %}">Main</a></li>
         <li><a href="{% url 'contact' %}">Contacts</a></li>
         <li><a href="{% url 'students:list_view' %}">Students</a></li>
     </ul>
@@ -34,7 +34,7 @@
 <div id="content_container">
   <div class="list-of-courses">
     <h1> {{ student_by_id.name }} {{ student_by_id.surname }}</h1>
-    <table width="100%">
+    <table id="full-s">
       <tr>
         <td> дата рождения </td>
         <td> {{ student_by_id.date_of_birth }} </td>
@@ -63,6 +63,6 @@
       </tr>
     </table>
   </div>
-
+</div>
 </body>
 </html>

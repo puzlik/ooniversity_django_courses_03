@@ -15,25 +15,20 @@ def detail(request, pk):
 def list_view(request):
 	try:
 		pk = str(request.GET['course_id'])
-		course_now = Course.objects.get(pk=pk)
 		students = Student.objects.filter(courses=pk)
 		i=1
 		for student in students:
 			student.courses_id = Course.objects.filter(student=student)
 			student.id_l = i
 			i=i+1
-		return render(request, 'students/list.html', {
-	    	"course_now": course_now,
-	    	"students": students,
-	    	})
 	except: 
-		students_all = Student.objects.all()
+		students = Student.objects.all()
 		
 		i=1
-		for student in students_all:
+		for student in students:
 			student.courses_id = Course.objects.filter(student=student)
 			student.id_l = i
 			i=i+1
-		return render(request, 'students/list.html', {
-			"students": students_all,
+	return render(request, 'students/list.html', {
+			"students": students,
 			})

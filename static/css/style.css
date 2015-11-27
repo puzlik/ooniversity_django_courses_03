@@ -302,3 +302,17 @@ table{
 #control_type{
 	width: 150px;
 }
+
+#full-s {
+	width: 500px;
+}
+
+.list-of-courses table{
+	background-color: #effcef;
+	border-color: #516251;
+	border: 1px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	width: 100%;
+}

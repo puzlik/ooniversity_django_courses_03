@@ -22,7 +22,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{% url 'index' %}">Main</a></li>
+        <li><a href="{% url 'index' %}">Main</a></li>
         <li><a href="{% url 'contact' %}">Contacts</a></li>
         <li><a href="{% url 'students:list_view' %}?course_id={{course_now.id}}">Students</a></li>
     </ul>
@@ -34,8 +34,7 @@
 <div id="content_container">
   <div id="header"> 
     <div class="header_content_mainline">
-      <h2>{{ course_now.name }}</h2>
-      <h1>Description</h1>
+      <h1>{{ course_now.name }}</h1>
       <div id="header_content_tagline">
         <p> {{ course_now.description }} </p>
       </div>
@@ -43,7 +42,7 @@
   </div>
   <div class="list-of-courses">
     <h3> Choose your future right --NOW--!</h3>
-    <table width="100%">
+    <table>
       <tr>
         <th class="head-name">Номер</th>
         <th class="head-name">Тема</th>
@@ -58,6 +57,6 @@
       {% endfor %}
     </table>
   </div>
-
+</div>
 </body>
 </html>
