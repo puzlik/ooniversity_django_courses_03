@@ -3,11 +3,12 @@ from courses.models import Course, Lesson
 
 class LessonInline(admin.TabularInline):
 	model = Lesson
-	#list_display = ('subject', 'description', 'order')
+	extra = 0
 	list_display = (('subject', 'description', 'order'), )
 
 class CourseAdmin(admin.ModelAdmin):
 	list_display = ('name', 'short_description')
+	search_fields = ['name']
 	inlines = [LessonInline, ]
 
 admin.site.register(Course, CourseAdmin)
