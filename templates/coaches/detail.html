@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>pyBursa | Coaches</title>
+<meta charset="utf-8">
+{% load staticfiles %}
+<link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+
+<body>
+
+  <!-- Nav bar -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <a class="navbar-brand" href="http://pybursa.com/">
+    <img class="logo-minions" alt="Logo Pretty Minions" src="{% static 'images/logo.jpg' %}"></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="{% url 'index' %}">Main</a></li>
+        <li><a href="{% url 'contact' %}">Contacts</a></li>
+        <li><a href="{% url 'students:list_view' %}">Students</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- end Nav bar-->
+
+<div id="content_container">
+  <div class="student-table">
+    <h1> {{ coach.full_name }}</h1>
+    <table id="full-s">
+      <tr>
+        <td> дата рождения </td>
+        <td> {{ coach.date_of_birth }} </td>
+      </tr>
+      <tr>
+        <td> адрес </td>
+        <td> {{ coach.address }} </td>
+      </tr>
+      <tr>
+        <td> email </td>
+        <td> {{ coach.email }} </td>
+      </tr>
+      <tr>
+        <td> skype </td>
+        <td> {{ coach.skype }} </td>
+      </tr>
+      <tr>
+        <td> телефон </td>
+        <td> {{ coach.phone }} </td>
+      </tr>
+      <tr>
+        <td> курсы учитель</td>
+        <td>  {% for course in coach.courses_coach %}
+          <p><a href="{% url 'courses:detail' course.id %}">{{ course }}</a> студенты курса <a href="{% url 'students:list_view' %}?course_id={{course.id}}"><span class=" glyphicon glyphicon-home"></span></a></p>
+          {% endfor %}</td>
+      </tr>
+      <tr>
+        <td> курсы ассистент</td>
+        <td>  {% for course in coach.courses_assistant %}
+          <p><a href="{% url 'courses:detail' course.id %}"> {{ course }}</a> студенты курса <a href="{% url 'students:list_view' %}?course_id={{course.id}}"><span class=" glyphicon glyphicon-home"></span></a></p>
+          {% endfor %}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>
