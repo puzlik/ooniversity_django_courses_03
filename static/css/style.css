@@ -246,7 +246,7 @@ table{
 }
 
 .head-stud-table th{
-	background-color: #ccf5cc;
+	background-color: #f4fdf4;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	text-align: center;
@@ -260,7 +260,7 @@ table{
 }
 
 .student-table a{
-	color: #548b70;
+	color: #a3b3c4;
 }
 
 .student-table a:hover{
@@ -289,7 +289,7 @@ table{
 }
 
 .head-stud-range-table th{
-	background-color: #ccf5cc;
+	background-color: #f4fdf4;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	text-align: center;
@@ -316,17 +316,27 @@ table{
 	text-align: center;
 	width: 100%;
 }
-
-div.coach {
-	color: #191711;
-	font-size: 1.5em;
-	font-family: Comic, Sans-Serif;
-	border: 10px;
-	border-color: #516251;
+.list-of-courses tr>td{
+	padding: 10px;
 }
-.coach h3{
-	background-color: #ccf5cc;
+.tutor-block div{
+	color: #191711;
+	font-size: 1.1em;
+	font-family: Comic, Sans-Serif;
+	border: 2px groove #004537;
+	background-color: #effcef;
+	margin-bottom: 25px;
+	padding-left: 10px;
+}
+.tutor-block h3{
+	background-color: #a3c4a3;
+	width: 150px;
+	text-align: center;
 }
 span.coach {
 	color: red;
+}
+.tutor-block a{
+	color: #a3b3c4;
+	font-size: 1.3em;
 }

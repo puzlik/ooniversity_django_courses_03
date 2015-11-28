@@ -41,19 +41,22 @@
     </div>   
   </div>
   <div class="clearfix"></div>
-  <div class="coach">
-    <h3>Учитель</h3>
-    <p><a href="{% url 'coaches:detail' course_now.coach.id %}">{{ coaches }}</a></p>
-    <p>{{ course_now.coach.description }}</p>
-  </div>
-  <div class="coach">
-    <h3>Ассистент</h3>
-    <p><a href="{% url 'coaches:detail' course_now.assistant.id %}">{{ assistants }}</a></p>
-    <p>{{ course_now.assistant.description }}</p>
+  <h2>Преподаватели</h2>
+  <div class="tutor-block">
+    <div>
+      <h3>Учитель</h3>
+      <p><a href="{% url 'coaches:detail' course_now.coach.id %}">{{ coaches }}</a></p>
+      <p>{{ course_now.coach.description }}</p>
+    </div>
+    <div>
+      <h3>Ассистент</h3>
+      <p><a href="{% url 'coaches:detail' course_now.assistant.id %}">{{ assistants }}</a></p>
+      <p>{{ course_now.assistant.description }}</p>
+    </div>
   </div>
   <div class="clearfix"></div>
   <div class="list-of-courses">
-    <h3> Choose your future right --NOW--!</h3>
+    <h2> План курса</h2>
     <table>
       <tr>
         <th class="head-name">Номер</th>
