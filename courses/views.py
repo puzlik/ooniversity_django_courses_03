@@ -9,7 +9,7 @@ def detail(request, pk):
 		lessons = course_now.lesson_set.all()
 		coaches = course_now.coach.user.get_full_name()
 		assistants = course_now.assistant.user.get_full_name()
-		num = course_now.coach.user.id
+		num = course_now.coach.id
 		return render(request, 'courses/detail.html', {
 	    	"course_now": course_now,
 	    	"lessons": lessons,
