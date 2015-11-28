@@ -40,7 +40,19 @@
       </div>
     </div>   
   </div>
-  <div class="student-table">
+  <div class="clearfix"></div>
+  <div class="coach">
+    <h3>Учитель</h3>
+    <p><a href="#">{{ coaches }}</a></p>
+    <p>{{ course_now.coach.description }}</p>
+  </div>
+  <div class="coach">
+    <h3>Ассистент</h3>
+    <p><a href="#">{{ assistants }}</a></p>
+    <p>{{ course_now.assistant.description }}</p>
+  </div>
+  <div class="clearfix"></div>
+  <div class="list-of-courses">
     <h3> Choose your future right --NOW--!</h3>
     <table>
       <tr>

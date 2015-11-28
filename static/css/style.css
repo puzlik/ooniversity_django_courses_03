@@ -260,7 +260,7 @@ table{
 }
 
 .student-table a{
-	color: #333;
+	color: #548b70;
 }
 
 .student-table a:hover{
@@ -304,7 +304,7 @@ table{
 }
 
 #full-s {
-	width: 500px;
+	width: 700px;
 }
 
 .list-of-courses table{
@@ -315,4 +315,18 @@ table{
 	padding-bottom: 5px;
 	text-align: center;
 	width: 100%;
+}
+
+div.coach {
+	color: #191711;
+	font-size: 1.5em;
+	font-family: Comic, Sans-Serif;
+	border: 10px;
+	border-color: #516251;
+}
+.coach h3{
+	background-color: #ccf5cc;
+}
+span.coach {
+	color: red;
 }
