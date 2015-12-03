@@ -2,19 +2,23 @@
 <h1>Quadratic Equation</h1>
 <div>
 	<p>Квадратное уравление: a*x^2 + b*x + c = 0 </p>
-		{% csrf_token %}
+		<!--<form method="get">
+		  {% csrf_token %}
+		  {{ form.as_p }}
+		  <input type="submit" />
+		</form>-->
 	<ul>
-		<li>a = {{ value_a }}
-		{% if error_a %}<br />{{ error_a }}{% endif %} </li>
-		<li>b = {{ value_b }}
-		{% if error_b %}<br />{{ error_b }}{% endif %}</li>
-		<li>c = {{ value_c }}
-		{% if error_c %}<br />{{ error_c }}{% endif %}</li>
+		<li>a = {{ a }}
+		{% if a_error %}<br />{{ a_error }}{% endif %} </li>
+		<li>b = {{ b }}
+		{% if b_error %}<br />{{ b_error }}{% endif %}</li>
+		<li>c = {{ c }}
+		{% if c_error %}<br />{{ c_error }}{% endif %}</li>
 	</ul>
 
-	{% if disc_eq %} <div>
-		<p>Дискриминант: {{ disc_eq }}</p>
-		<p> {{ disc_text }} 
+	{% if not error %} <div>
+		<p>Дискриминант: {{ d }}</p>
+		<p> {{ d_text }} 
 		</p> 
 		</div>
 	{% endif %}

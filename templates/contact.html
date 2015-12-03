@@ -1,96 +1,44 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>pyBursa | Contact Us</title>
-<meta charset="utf-8">
+{% extends "base.html" %}
+
+{% block title %}pyBursa | Contacts{% endblock %}
+
+{% block nav_class_contact %}active{% endblock %}
+
+{% block content %} 
 {% load staticfiles %}
-<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-<link href="{% static 'css/style.css' %}" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-</head>
-
-<body>
-
-  <!-- Nav bar -->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-    <a class="navbar-brand" href="http://pybursa.com/">
-    <img class="logo-minions" alt="Logo Pretty Minions" src="{% static 'images/logo.jpg' %}"></a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="{% url 'index' %}">Main</a></li>
-        <li class="active"><a href="{% url 'contact' %}">Contacts</a></li>
-        <li><a href="{% url 'student_list' %}">Students</a></li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<!-- end Nav bar-->
- 
-<div class="container">
-  <h1 id="header-contacts">Contact pyBursa organizators for more information</h1>
-  <div class="col-md-4">
-    <div class="contact-person" id="director">
-      <h1> <span class="position-organization">Director</span></h1>
-      <p class="contact-name"><span class="contact-name">Name:</span>Дария Михалевич</p>
-      <p><span class="contact-skype">Skype:</span>darka.darka.darka.darka.</p>
-      <p><span class="contact-email">Email:</span>daria.mykhalevych@gmail.com</p>
-      <p><span class="contact-phone">Phone:</span>+38 096 469 15 57</p>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="contact-person" id="manager">
-      <h1><span class="position-organization">Manager</span></h1>
-      <p class="contact-name"><span class="contact-name">Name:</span>Татьяна Орехова</p>
-      <p><span class="contact-skype">Skype:</span>Tatyana_Oriekhova</p>
-      <p><span class="contact-email">Email:</span>to096540848@gmail.com</p>
-      <p><span class="contact-phone">Phone:</span>+38 099 186 64 75 </p>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="contact-person" id="founder">
-      <h1><span class="position-organization">Founder</span></h1>
-      <p class="contact-name"><span class="contact-name">Name:</span>Павел Обод</p>
-      <p><span class="contact-skype">Skype:</span>azaless</p>
-      <p><span class="contact-email">Email:</span>itbursa100@gmail.com</p>
-      <p><span class="contact-phone">Phone:</span>000-111-11-11</p>
-    </div>
-  </div>
-</div> 
-<div class="clearfix"></div>
-
-<!-- Tabs Menu -->
-<div class="container">
-  <h2>Узнать подробнее об ItBursa можно здесь...</h2>
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Адрес</a></li>
-    <li><a data-toggle="tab" href="#menu1">Телефон</a></li>
-    <li><a data-toggle="tab" href="#menu2">Social Network</a></li>
-  </ul>
-</div>
-
-<div class="tab-content">
-  <div id="home" class="tab-pane fade in active">
-    <p>проспект Ленина, 56, Харьков, Харьковская область</p>
-  </div>
-  <div id="menu1" class="tab-pane fade">
-    <p>096 070 5347</p>
-    <div class="btn-group btn-group-lg" role="group" aria-label="Button1"><h4>Call me</h4></div>
-    <div class="btn-group" role="group" aria-label="Button2"><h5>As soon</h5></div>
-    <div class="btn-group btn-group-sm" role="group" aria-label="Button3"><h6>As possible</h6></div>
-    <div class="btn-group btn-group-xs" role="group" aria-label="Button4"><h2>Call me NOW</h2></div>
-  </div>
-  <div id="menu2" class="tab-pane fade">
-    <p><a href="https://www.facebook.com/pages/It-Bursa/1539330322946469"> FaCebook Group </a></p>
-    <p><a href="https://vk.com/public82364378"> VK Group </a></p><br />
+<h1 id="header-contacts">Contact pyBursa organizators for more information</h1>
+<div>
+<div class="col-md-4">
+  <div class="contact-person" id="director">
+    <h1> <span class="position-organization">Director</span></h1>
+    <p class="contact-name"><span class="contact-name">Name:</span>Дария Михалевич</p>
+    <p><span class="contact-skype">Skype:</span>darka.darka.darka.darka.</p>
+    <p><span class="contact-email">Email:</span>daria.mykhalevych@gmail.com</p>
+    <p><span class="contact-phone">Phone:</span>+38 096 469 15 57</p>
   </div>
 </div>
-<!-- ends Tabs Menu -->
-</body>
-</html>
+
+<div class="col-md-4">
+  <div class="contact-person" id="manager">
+    <h1><span class="position-organization">Manager</span></h1>
+    <p class="contact-name"><span class="contact-name">Name:</span>Татьяна Орехова</p>
+    <p><span class="contact-skype">Skype:</span>Tatyana_Oriekhova</p>
+    <p><span class="contact-email">Email:</span>to096540848@gmail.com</p>
+    <p><span class="contact-phone">Phone:</span>+38 099 186 64 75 </p>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="contact-person" id="founder">
+    <h1><span class="position-organization">Founder</span></h1>
+    <p class="contact-name"><span class="contact-name">Name:</span>Павел Обод</p>
+    <p><span class="contact-skype">Skype:</span>azaless</p>
+    <p><span class="contact-email">Email:</span>itbursa100@gmail.com</p>
+    <p><span class="contact-phone">Phone:</span>000-111-11-11</p>
+  </div>
+</div>
+</div>
+<div class="img-main">
+  <img src="{% static 'images/pic1.jpg' %}" alt="demotivator" />
+</div>
+{% endblock content %}
