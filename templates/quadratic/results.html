@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block title %}Quadratic Equation{% endblock %}
+
+
+{% block content %}
+<h1>Quadratic Equation</h1>
+<div>
+	<p>Квадратное уравление: a*x^2 + b*x + c = 0 </p>
+		<form method="get">
+		  {% csrf_token %}
+		  {{ form.as_p }}
+		  <input type="submit" value="Решить" />
+		</form>
+	{% if d_text %} <div>
+		<p>Дискриминант: {{ d }}</p>
+		<p> {{ d_text }} 
+		</p> 
+		</div>
+	{% endif %}
+</div>
+{% endblock content %}

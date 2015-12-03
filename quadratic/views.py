@@ -1,7 +1,6 @@
 #-*-coding: utf-8-*-
 from django.shortcuts import render
 from quadratic.forms import QuadraticForm
-
 class Coefficient(object):
 	
 	def __init__(self, name, value):
@@ -27,20 +26,12 @@ class Coefficient(object):
 		return True
 
 def quadratic_results(request):
-	context = {'error': False}
-	for name_value in ['a', 'b', 'c']:
-		coefficient = Coefficient(name_value, request.GET.get(name_value, ''))
-		if coefficient.is_valid():
-			context[name_value] = coefficient.value_int
-		else:
-			context['error'] = True
-			context[name_value + '_error'] = coefficient.error_message
-			context[name_value] = coefficient.value
-	if not context['error']:
-		a = context['a']
-		b = context['b']
-		c = context['c']
-
+	form = QuadraticForm(request.GET)
+	context = {'form': form}
+	if form.is_valid():
+		a = int(form['a'].value())
+		b = int(form['b'].value())
+		c = int(form['c'].value())
 		d = b * b - 4 * a * c
 		if d < 0:
 			d_text = "Дискриминант меньше нуля, квадратное уравнение не имеет действительных решений."
@@ -53,6 +44,7 @@ def quadratic_results(request):
 			d_text = "Квадратное уравнение имеет два действительных корня: x1 = {0}, x2 = {1}".format(x1, x2)
 		context['d_text'] = d_text
 		context['d'] = d
-		return render(request, 'results.html', context)
-	else:
-		return render(request, 'results.html', context)
+	elif form['a'].value() == form['b'].value() == form['c'].value() == None:
+		form = QuadraticForm()
+		context['form'] = form
+	return render(request, 'quadratic/results.html', context)
