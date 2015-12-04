@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 
+{% load staticfiles %}
 
-{% block nav_class_main %}active{% endblock %}
+{% block nav_class_main %}active{% endblock nav_class_main %}
 
 
-{% block title %}pyBursa | Main{% endblock %}
+{% block title %}pyBursa | Main{% endblock title%}
 
 {% block content %}
-{% load staticfiles %}
+
 <div id="header"> 
   <div class="header_content_mainline">
     <h1>pyBursa</h1>

@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
-{% block title %}pyBursa | Student{% endblock %}
+{% block title %}pyBursa | Student{% endblock title %}
 
-{% block nav_class_students %}active{% endblock %}
+{% block nav_class_students %}active{% endblock nav_class_students %}
 
 {% block content %} 
-{% load staticfiles %}
+
 <h1>Ivanov Ivan</h1>
 <div class="header_content_mainline">
   <h6>Язык программирования Python набирает все большей популярности. И каждая группа pyBursa все увеличивается. Ниже приведет список топ-5 участников pyBursa на сегодня. С полным списком можете ознакомиться на сайте <a href="http://pybursa.com">pyBursa</a></h6>

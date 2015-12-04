@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}pyBursa | Course{% endblock %}
+{% load staticfiles %}
 
+{% block title %}pyBursa | Course{% endblock title %}
+
+{% block course_id %}?course_id={{ course_now.id }}{% endblock course_id %}
 
 {% block content %} 
-{% load staticfiles %}
 <div id="header"> 
   <div class="header_content_mainline">
     <h1>{{ course_now.name }}</h1>
@@ -16,9 +18,9 @@
 <div class="clearfix"></div>
 <h2>Преподаватели</h2>
 <div class="tutor-block">
-  {% include "courses/include/inc_coach.html" with block_title="Учитель" instructor=course_now.coach %}
+  {% include "include/course_instr_include.html" with block_title="Учитель" instructor=course_now.coach %}
 
-  {% include "courses/include/inc_coach.html" with block_title="Ассистент" instructor=course_now.assistant %}
+  {% include "include/course_instr_include.html" with block_title="Ассистент" instructor=course_now.assistant %}
 </div>
 <div class="clearfix"></div>
 <div class="list-of-courses">

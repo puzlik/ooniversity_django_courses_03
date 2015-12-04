@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}pyBursa | Coach{% endblock %}
+{% load staticfiles %}
+
+{% block title %}pyBursa | Coach{% endblock title %}
 
 
 {% block content %} 
-{% load staticfiles %}
+
 <div class="student-table">
   <h1> {{ coach.full_name }}</h1>
   <table id="full-s">
     <tr>
       <td> дата рождения </td>
-      <td> {{ coach.date_of_birth|date:'j F, Y' }} </td>
+      <td> {{ coach.date_of_birth|date:'d F, Y' }} </td>
     </tr>
     <tr>
       <td> адрес </td>
@@ -47,5 +49,5 @@
   </table>
 </div>
 
-{% include 'coaches/include/inc_coach_img.html' %}
+{% include 'include/coach_img_include.html' %}
 {% endblock content %}

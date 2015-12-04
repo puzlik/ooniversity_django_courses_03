@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}pyBursa | Student{% endblock %}
+{% load staticfiles %}
 
-{% block nav_class_students %}active{% endblock %}
+{% block title %}pyBursa | Student{% endblock title %}
+
+{% block nav_class_students %}active{% endblock nav_class_students %}
 
 {% block content %} 
-{% load staticfiles %}
+
 <div class="student-table">
   <h1> {{ student_by_id.name }} {{ student_by_id.surname }}</h1>
   <table id="full-s">
@@ -38,6 +40,6 @@
     </tr>
   </table>
 </div>
-{% include 'students/include/inc_stud_img2.html' %}
+{% include 'include/stud_img2_include.html' %}
 
 {% endblock content %}
