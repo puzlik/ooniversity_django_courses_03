@@ -3,9 +3,9 @@ from django.shortcuts import render
 from django import forms
 
 class QuadraticForm(forms.Form):
-    a = forms.IntegerField(label="коэффициент a:", widget=forms.TextInput)
-    b = forms.IntegerField(label="коэффициент b:", widget=forms.TextInput)
-    c = forms.IntegerField(label="коэффициент c:", widget=forms.TextInput)
+    a = forms.IntegerField(label="коэффициент a:")
+    b = forms.IntegerField(label="коэффициент b:")
+    c = forms.IntegerField(label="коэффициент c:")
 
     def clean_a(self):
     	data = self.cleaned_data['a']

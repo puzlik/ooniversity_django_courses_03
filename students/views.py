@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from students.models import Student
 from courses.models import Course
 from django.core.exceptions import ObjectDoesNotExist
+from students.forms import StudentModelForm
 
 
 def detail(request, pk):
@@ -32,3 +33,16 @@ def list_view(request):
 	return render(request, 'students/list.html', {
 			"students": students,
 			})
+
+#def create(request):
+#	context = {}
+#	if request.method == 'POST': 
+#		form = StudentModelForm(request.POST)
+#		if form.is_valid():
+#			data = form.cleaned_data
+#			form.save()
+#			return redirect('students:list')
+#	else:
+#		form = StudentModelForm()
+#	    context['form'] = form
+#	return render(request, 'students/add.html', context)
