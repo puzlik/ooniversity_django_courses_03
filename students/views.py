@@ -41,15 +41,12 @@ def create(request):
 	if request.method == 'POST': 
 		form = StudentModelForm(request.POST)
 		if form.is_valid():
-			data = form.cleaned_data
 			student_add = form.save()
-			messages.success(request, "Student %s %s has been successfully added." %(student_add.name, student_add.surname))
+			messages.success(request, 'Student %s %s has been successfully added.' %(student_add.name, student_add.surname))
 			return redirect('students:list_view')
-		else:
-			messages.warning(request, "Attention!!! Wrong data in the form fields!!!")
 	else:
 		context = {'form': StudentModelForm()}
-		return render(request, 'students/add.html', context)
+	return render(request, 'students/add.html', context)
 
 def edit(request, pk):
 	student_by_id = Student.objects.get(id=pk)
@@ -57,14 +54,11 @@ def edit(request, pk):
 		form = StudentModelForm(request.POST, instance=student_by_id)
 		if form.is_valid:
 			form.save()
-			messages.success(request, "Info on the student has been successfully changed.")
+			messages.success(request, 'Info on the student has been successfully changed.')
 			return redirect('students:edit', pk=pk)
-		else:
-			messages.warning(request, "Attention!!! Wrong data in the form fields!!!")
-	elif request.method == 'GET':
-		form = StudentModelForm(instance=student_by_id)
-		context = {'form': form}
-		return render(request, 'students/edit.html', context)
+	else:
+		context = {'form': StudentModelForm(instance=student_by_id)}
+	return render(request, 'students/edit.html', context)
 
 def remove(request, pk):
 	student_by_id = Student.objects.get(id=pk)
