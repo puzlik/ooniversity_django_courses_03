@@ -50,7 +50,7 @@ def create(request):
 
 def edit(request, pk):
 	student_by_id = Student.objects.get(id=pk)
-	if request.method == 'POST':
+	if request.POST:
 		form = StudentModelForm(request.POST, instance=student_by_id)
 		if form.is_valid:
 			form.save()
