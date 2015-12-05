@@ -64,17 +64,12 @@ def remove(request, pk):
 
 def add_lesson(request, pk):
 	context = {}
-	#course = Course.objects.get(id=pk)
-	#lesson = LessonModelForm(id=pk)
 	if request.method == 'POST': 
 		form = LessonModelForm(request.POST)
 		if form.is_valid():
-			data = form.cleaned_data
 			lesson_add = form.save()
-			messages.success(request, "Lesson %s has been successfully added." %(lesson_add.subject))
+			messages.success(request, "Lesson %s has been sucessfully added." %(lesson_add.subject))
 			return redirect('courses:detail', pk)
-		else:
-			messages.warning(request, "Attention!!! Wrong data in the form fields!!!")
 	else:
 		form = LessonModelForm(initial={'course': pk})
 	context = {'form': form}
