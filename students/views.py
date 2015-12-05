@@ -52,12 +52,13 @@ def edit(request, pk):
 	student_by_id = Student.objects.get(id=pk)
 	if request.method == 'POST':
 		form = StudentModelForm(request.POST, instance=student_by_id)
-		context = {'form': form}
 		if form.is_valid:
 			form.save()
-			messages.success(request, 'Info on the student has been sucessfully changed.')
+			messages.success(request, "Info on the student has been sucessfully changed.")
+			return redirect('students:edit', pk)
 	else:
-		context = {'form': StudentModelForm(instance=student_by_id)}
+		form = StudentModelForm(instance=student_by_id)
+	context = {'form': form}
 	return render(request, 'students/edit.html', context)
 
 def remove(request, pk):
