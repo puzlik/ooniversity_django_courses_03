@@ -31,8 +31,9 @@
 </div>
 <div class="clearfix"></div>
 <div class="list-of-courses">
-  <p><a href="{% url 'courses:add_lesson' course_now.id %}"><button type="button" class="btn btn-info" onclick="/"><span class="glyphicon glyphicon-plus"></span>Добавить занятие</button></a></p>
   <h2> План курса</h2>
+  <p><a href="{% url 'courses:add_lesson' course_now.id %}"><button type="button" class="btn btn-info" onclick="/"><span class="glyphicon glyphicon-plus"></span>Добавить занятие</button></a></p>
+  {% if lessons %}
   <table>
     <tr>
       <th class="head-name">Номер</th>
@@ -47,5 +48,6 @@
     </tr>
     {% endfor %}
   </table>
+  {% endif %}
 </div>
 {% endblock content %}

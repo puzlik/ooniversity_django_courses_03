@@ -6,10 +6,9 @@ from django import forms
 class CourseModelForm(ModelForm):
     class Meta:
     	model = Course
-    	fields = ['name', 'short_description', 'description', 'coach', 'assistant']
+    	fields = '__all__'
 
 class LessonModelForm(ModelForm):
     class Meta:
     	model = Lesson
-    	fields = ['subject', 'description', 'course', 'order']
-    	localized_fields = ('course',)
+    	fields = '__all__'
