@@ -7,7 +7,14 @@
 {% block nav_class_students %}active{% endblock nav_class_students %}
 
 {% block content %} 
-
+    {% if messages %}<div class="messages">
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    </div>{% endif %}
+<div class="stud-btn">
+  <a href="{% url 'students:add' %}"><button type="button" class="btn btn-info" onclick="/"><span class="glyphicon glyphicon-plus"></span>Добавить нового студента</button></a>
+</div>
 <div class="list-of-courses">
 <h1> Список студентов</h1>
   <table>
@@ -17,6 +24,8 @@
       <th class="head-name">адрес</th>
       <th class="head-name">skype</th>
       <th class="head-name">курсы</th>
+      <th class="head-name">изменить</th>
+      <th class="head-name">удалить</th>
     </tr>
     {% for student in students %}
     <tr>
@@ -28,6 +37,8 @@
         <p><a href="{% url 'courses:detail' s_courses.id %}">{{ s_courses }}</a></p>
           {% endfor %}
       </td>
+      <td><a href="{% url 'students:edit' student.id %}"><button type="button" class="btn btn-info" onclick="/"><span class="glyphicon glyphicon-pencil"></span>Изменить</button></a></td></td>
+      <td><a href="{% url 'students:remove' student.id %}"><button type="button" class="btn btn-info" onclick="/"><span class="glyphicon glyphicon-remove"></span>Удалить</button></a></td></td>
     </tr>
     {% endfor %}
   </table>

@@ -7,6 +7,13 @@
 {% block course_id %}?course_id={{ course_now.id }}{% endblock course_id %}
 
 {% block content %} 
+
+  {% if messages %}<div class="messages">
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}  
+  </div>{% endif %}
+
 <div id="header"> 
   <div class="header_content_mainline">
     <h1>{{ course_now.name }}</h1>
@@ -24,6 +31,7 @@
 </div>
 <div class="clearfix"></div>
 <div class="list-of-courses">
+  <p><a href="{% url 'courses:add_lesson' course_now.id %}"><button type="button" class="btn btn-info" onclick="/"><span class="glyphicon glyphicon-plus"></span>Добавить занятие</button></a></p>
   <h2> План курса</h2>
   <table>
     <tr>

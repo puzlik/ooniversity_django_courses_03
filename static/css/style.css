@@ -1,6 +1,7 @@
 body {
 	margin:0px;
 	padding:0px;
+	margin-bottom: 50px;
 }
 
 #content_container {
@@ -114,7 +115,8 @@ body {
 
 td{
 	text-align: center;
-	width: 100px;
+	width: auto;
+	max-width: 15%;
 	height: 50px;
 	border: 1px dotted;
 	border-color: #ccf5cc;
@@ -311,15 +313,22 @@ table{
 
 .list-of-courses table{
 	background-color: #effcef;
-	border-color: #516251;
-	border: 1px;
-	padding-top: 5px;
+	padding: 5px;
 	padding-bottom: 5px;
 	text-align: center;
-	width: 100%;
+	width: auto;
 }
-.list-of-courses tr>td{
+.list-of-courses td{
 	padding: 10px;
+	width: auto;
+	max-width: 50%;
+}
+.list-of-courses tr>th{
+	padding: 5px;
+	border: 1px solid #a3c4a3;
+}
+.list-of-courses tr, td{
+	border: 1px solid #a3c4a3;
 }
 .tutor-block div{
 	color: #191711;
@@ -342,14 +351,18 @@ span.coach {
 	color: #a3b3c4;
 	font-size: 1.3em;
 }
-.footer-p p{
-	margin-top: 20px;
-	margin-bottom: 1px;
+
+.footer-p {
+	position: fixed;
+	left: 0;
+	bottom: 0;
 	width: 100%;
-	text-align: center;
+	height: 30px;
 	font-size: 1.1em;
-	background-color: #333;
-	color: #E7E7E7;
+	text-align: center;
+	vertical-align: center;
+	background-color: #252525;
+	color: #ccf5cc;
 }
 
 .student-avatar-app{
@@ -363,4 +376,52 @@ span.coach {
 }
 .img-main {
 	text-align: center;
+}
+.messages{
+	background-color: #ccf5cc;
+	color: #667a66;
+	border-color: #667a66;
+	border: 2px dotted;
+	font-size: 1.3em;
+	margin: 10px;
+	font-family: sans-serif;
+	text-align: center;
+	vertical-align: center;
+	height: 50px;
+	width: auto;
+	padding: 10px;
+}
+
+.add-stud-btn button{
+	background-color: #ccf5cc;
+	color: #667a66;
+	border: 2px dotted #667a66;
+	font-size: 1.3em;
+	margin: 10px;
+	font-family: sans-serif;
+	text-align: center;
+	vertical-align: center;
+	height: 50px;
+	width: auto;
+	padding: 10px;
+}
+.list-of-courses button{
+	background-color: #ccf5cc;
+	color: #667a66;
+	border: 2px dotted #667a66;
+	font-size: 1.3em;
+	margin: 10px;
+	font-family: sans-serif;
+	text-align: center;
+	vertical-align: center;
+	height: 50px;
+	width: auto;
+	padding: 10px;
+}
+.stud-btn span{
+	padding: 5px;
+}
+.list-of-courses span {
+	padding: 5px;
+	vertical-align: center;
 }

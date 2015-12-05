@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}pyBursa | Edit Student{% endblock %}
+
+{% block nav_class_students %}active{% endblock %}
+
+{% block content %} 
+  {% if messages %}<div class="messages">
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+  </div>{% endif %}
+<h1>Редактирование данных студента</h1>
+<form method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Изменить" />
+</form>
+{% endblock content %} 

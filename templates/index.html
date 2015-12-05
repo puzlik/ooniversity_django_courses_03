@@ -9,6 +9,12 @@
 
 {% block content %}
 
+  {% if messages %}<div class="messages">
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+  </div>{% endif %}
+
 <div id="header"> 
   <div class="header_content_mainline">
     <h1>pyBursa</h1>
@@ -23,15 +29,20 @@
 </div>
 <div class="list-of-courses">
   <h3> Choose your future right --NOW--!</h3>
+  <p><a href="{% url 'courses:add' %}"><button type="button" class="btn btn-info" onclick="/"><span class="glyphicon glyphicon-plus"></span>Добавить новый курс</button></a></p>
   <table>
     <tr>
       <th class="head-name">Курс</th>
       <th class="head-name">Описание</th>
+      <th class="head-name">Изменить</th>
+      <th class="head-name">Удалить</th>
     </tr>
     {% for course in courses %}
     <tr>
       <td><a href="{% url 'courses:detail' course.id %}">{{ course.name|upper }}</a></td>
       <td>{{ course.short_description|title }}</td>
+      <td><a href="{% url 'courses:edit' course.id %}"><button type="button" class="btn btn-info" onclick="/"><span class="glyphicon glyphicon-pencil"></span>Изменить</button></a></td></td>
+      <td><a href="{% url 'courses:remove' course.id %}"><button type="button" class="btn btn-info" onclick="/"><span class="glyphicon glyphicon-remove"></span>Удалить</button></a></td></td>
     </tr>
     {% endfor %}
   </table>

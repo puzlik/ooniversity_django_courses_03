@@ -1,8 +1,10 @@
+#-*-coding: utf-8-*-
 from django.shortcuts import render, redirect
 from students.models import Student
 from courses.models import Course
 from django.core.exceptions import ObjectDoesNotExist
 from students.forms import StudentModelForm
+from django.contrib import messages
 
 
 def detail(request, pk):
@@ -34,15 +36,42 @@ def list_view(request):
 			"students": students,
 			})
 
-#def create(request):
-#	context = {}
-#	if request.method == 'POST': 
-#		form = StudentModelForm(request.POST)
-#		if form.is_valid():
-#			data = form.cleaned_data
-#			form.save()
-#			return redirect('students:list')
-#	else:
-#		form = StudentModelForm()
-#	    context['form'] = form
-#	return render(request, 'students/add.html', context)
+def create(request):
+	context = {}
+	if request.method == 'POST': 
+		form = StudentModelForm(request.POST)
+		if form.is_valid():
+			data = form.cleaned_data
+			student_add = form.save()
+			messages.success(request, "Student %s %s has been successfully added." %(student_add.name, student_add.surname))
+			return redirect('students:list_view')
+		else:
+			messages.warning(request, "Attention!!! Wrong data in the form fields!!!")
+	else:
+		context = {'form': StudentModelForm()}
+		return render(request, 'students/add.html', context)
+
+def edit(request, pk):
+	student_by_id = Student.objects.get(id=pk)
+	if request.method == 'POST':
+		form = StudentModelForm(request.POST, instance=student_by_id)
+		if form.is_valid:
+			form.save()
+			messages.success(request, "Info on the student has been successfully changed.")
+			return redirect('students:edit', pk=pk)
+		else:
+			messages.warning(request, "Attention!!! Wrong data in the form fields!!!")
+	elif request.method == 'GET':
+		form = StudentModelForm(instance=student_by_id)
+		context = {'form': form}
+		return render(request, 'students/edit.html', context)
+
+def remove(request, pk):
+	student_by_id = Student.objects.get(id=pk)
+	remove_message = "Student %s %s will be deleted" %(student_by_id.name, student_by_id.surname)
+	if request.method == 'POST':
+		student_by_id.delete()
+		messages.success(request, "Info on %s %s has been successfully deleted." %(student_by_id.name, student_by_id.surname))
+		return redirect('students:list_view')
+	context = {'remove_message': remove_message}
+	return render(request, 'students/remove.html', context)

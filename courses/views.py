@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from courses.models import Course, Lesson
-
 from django.core.exceptions import ObjectDoesNotExist
+from courses.forms import CourseModelForm, LessonModelForm
+from django.contrib import messages
+
 
 def detail(request, pk):
 	try:
@@ -22,3 +24,61 @@ def detail(request, pk):
 		return render(request, 'courses/detail.html', {
 		    "message": message,
             })
+
+def add(request):
+	context = {}
+	if request.method == 'POST': 
+		form = CourseModelForm(request.POST)
+		if form.is_valid():
+			data = form.cleaned_data
+			course_add = form.save()
+			messages.success(request, "Course %s has been successfully added." %(course_add.name))
+			return redirect('/')
+		else:
+			messages.warning(request, "Attention!!! Wrong data in the form fields!!!")
+	else:
+		context = {'form': CourseModelForm()}
+		return render(request, 'courses/add.html', context)
+
+def edit(request, pk):
+	course_by_id = Course.objects.get(id=pk)
+	if request.method == 'POST':
+		form = CourseModelForm(request.POST, instance=course_by_id)
+		if form.is_valid:
+			form.save()
+			messages.success(request, "The changes have been saved.")
+			return redirect('courses:edit', pk=pk)
+		else:
+			messages.warning(request, "Attention!!! Wrong data in the form fields!!!")
+	elif request.method == 'GET':
+		form = CourseModelForm(instance=course_by_id)
+		context = {'form': form}
+		return render(request, 'courses/edit.html', context)
+
+def remove(request, pk):
+	course_by_id = Course.objects.get(id=pk)
+	remove_message = "Course %s will be deleted" %(course_by_id.name)
+	if request.method == 'POST':
+		course_by_id.delete()
+		messages.success(request, "Course %s has been deleted." %(course_by_id.name))
+		return redirect('/')
+	context = {'remove_message': remove_message}
+	return render(request, 'courses/remove.html', context)
+
+#def add_lesson(request, pk):
+#	context = {}
+	#course = Course.objects.get(id=pk)
+	#lesson = LessonModelForm(id=pk)
+#	if request.method == 'POST': 
+#		form = LessonModelForm(request.POST)
+#		print "hello {}".format(form)
+#		if form.is_valid():
+#			data = form.cleaned_data
+#			lesson_add = form.save()
+#			messages.success(request, "Lesson %s has been successfully added." %(lesson_add.name))
+#			return redirect('courses:detail', pk=pk)
+#		else:
+#			messages.warning(request, "Attention!!! Wrong data in the form fields!!!")
+#	else:
+#		context = {'form': LessonModelForm()}
+#		return render(request, 'courses/add_lesson.html', context)
