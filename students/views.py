@@ -45,7 +45,8 @@ def create(request):
 			messages.success(request, 'Student %s %s has been successfully added.' %(student_add.name, student_add.surname))
 			return redirect('students:list_view')
 	else:
-		context = {'form': StudentModelForm()}
+		form = StudentModelForm()
+	context = {'form': form}
 	return render(request, 'students/add.html', context)
 
 def edit(request, pk):
