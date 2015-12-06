@@ -1,6 +1,7 @@
 import datetime
 
 from django.db import models
+from courses.models import Course
 
 class Student(models.Model):
 	name = models.CharField(max_length = 255)
@@ -10,7 +11,7 @@ class Student(models.Model):
 	phone = models.CharField(max_length = 255)
 	address = models.CharField(max_length = 255)
 	skype = models.CharField(max_length = 255)
-	courses = models.ManyToManyField('courses.Course')
+	courses = models.ManyToManyField(Course)
 
 	def __unicode__(self): 
 		full_name = "%s %s" % (self.name, self.surname)

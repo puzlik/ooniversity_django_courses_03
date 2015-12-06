@@ -52,7 +52,7 @@ def edit(request, pk):
 	student_by_id = Student.objects.get(id=pk)
 	if request.method == 'POST':
 		form = StudentModelForm(request.POST, instance=student_by_id)
-		if form.is_valid:
+		if form.is_valid():
 			form.save()
 			messages.success(request, u'Info on the student has been sucessfully changed.')
 	else:
