@@ -9,31 +9,31 @@
 {% block content %} 
 
 <div class="student-table">
-  <h1> {{ student_by_id.name }} {{ student_by_id.surname }}</h1>
+  <h1> {{ student.name }} {{ student.surname }}</h1>
   <table id="full-s">
     <tr>
       <td> дата рождения </td>
-      <td> {{ student_by_id.date_of_birth }} </td>
+      <td> {{ student.date_of_birth }} </td>
     </tr>
     <tr>
       <td> адрес </td>
-      <td> {{ student_by_id.address }} </td>
+      <td> {{ student.address }} </td>
     </tr>
     <tr>
       <td> email </td>
-      <td> {{ student_by_id.email }} </td>
+      <td> {{ student.email }} </td>
     </tr>
     <tr>
       <td> skype </td>
-      <td> {{ student_by_id.skype }} </td>
+      <td> {{ student.skype }} </td>
     </tr>
     <tr>
       <td> телефон </td>
-      <td> {{ student_by_id.phone }} </td>
+      <td> {{ student.phone }} </td>
     </tr>
     <tr>
       <td> курсы </td>
-      <td>  {% for s_courses in student_by_id.courses_id %}
+      <td>  {% for s_courses in student.courses.all %}
         <p><a href="{% url 'courses:detail' s_courses.id %}"> {{ s_courses }}</a></p>
           {% endfor %}
       </td>

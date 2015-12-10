@@ -7,11 +7,11 @@
 {% block content %} 
 <div class="remove-student">
 
-{% include 'include/coach_img_include.html' %}
-
+<div>{% include 'include/coach_img_include.html' %}</div>
+<h1>{{ title }}</h1>
 <form method="post">
 	{% csrf_token %}
-	{{ remove_message }}
+	{{ form.as_p }}
 	<input type="submit" value="Удалить" />
 </form>
 </div>

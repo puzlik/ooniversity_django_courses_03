@@ -27,13 +27,13 @@
       <th class="head-name">изменить</th>
       <th class="head-name">удалить</th>
     </tr>
-    {% for student in students %}
+    {% for student in object_list %}
     <tr>
-      <td>{{ student.id_l }}</td>
+      <td>{{ forloop.counter }}</td>
       <td><a href="{% url 'students:detail' student.id %}">{{ student.surname }} {{ student.name}} </a></td>
       <td>{{ student.address }}</td>
       <td>{{ student.skype }}</td>
-      <td> {% for s_courses in student.courses_id %}
+      <td> {% for s_courses in student.courses.all %}
         <p><a href="{% url 'courses:detail' s_courses.id %}">{{ s_courses }}</a></p>
           {% endfor %}
       </td>
