@@ -30,7 +30,9 @@ class CourseCreateView(CreateView):
 class CourseUpdateView(UpdateView):
 	model = Course
 	template_name = 'courses/edit.html'
-	success_url = reverse_lazy('index')
+
+	def get_success_url(self, **kwargs):
+		return reverse_lazy('courses:detail', args=(self.object.pk,))
 	
 	def get_context_data(self, **kwargs):
 		context = super(CourseUpdateView, self).get_context_data(**kwargs)
@@ -64,10 +66,10 @@ class LessonCreateView(CreateView):
 		return initial
 
 	def get_success_url(self, **kwargs):
-		return reverse_lazy('courses:detail', args=(self.object.pk,))
+		return reverse_lazy('courses:detail', args=(self.kwargs['pk'],))
 
 	def form_valid(self, form):
-		messages.success(request, "Lesson %s has been successfully added." %(form.instance.subject))		
+		messages.success(self.request, "Lesson %s has been successfully added." %(form.instance.subject))		
 		return super(LessonCreateView, self).form_valid(form)
 
 	def get_context_data(self, **kwargs):
