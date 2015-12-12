@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.shortcuts import render
 from pybursa import views
+from feedbacks.views import FeedbackView
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),  
@@ -14,5 +15,5 @@ urlpatterns = patterns('',
     url(r'^student_list/$', views.student_list, name='student_list'),
     url(r'^student_detail/$', views.student_detail, name='student_detail'),
     url(r'^quadratic/', include('quadratic.urls'), name='results'),
-    url(r'^feedback/', views.FeedbackView.as_view(), name='feedback'),
+    url(r'^feedback/', FeedbackView.as_view(), name='feedback'),
 )
