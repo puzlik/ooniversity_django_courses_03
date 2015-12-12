@@ -9,6 +9,7 @@ from django.contrib import messages
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 class StudentDetailView(DetailView):
@@ -23,7 +24,25 @@ class StudentListView(ListView):
 			students = Student.objects.filter(courses__id=pk)
 		else:
 			students = Student.objects.all()
+		paginator = Paginator(students, 2)
 		return students
+
+	def get_context_data(self, **kwargs):
+		context = super(StudentListView, self).get_context_data(**kwargs)
+		#student_list = super(StudentListView, self).get_queryset()
+		student_list = Student.objects.all()
+		paginator = Paginator(student_list, 2)
+		page = self.request.GET.get('page')
+		try:
+			object_list = paginator.page(page)
+		except PageNotAnInteger:
+			object_list = paginator.page(1)
+		except EmptyPage:
+			object_list = paginator.page(paginator.num_pages)
+		print dir(object_list)
+		context['pages'] =  paginator.page_range
+		context['object_list'] = object_list
+		return context
 
 
 class StudentCreateView(CreateView):
