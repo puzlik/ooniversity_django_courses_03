@@ -418,10 +418,49 @@ span.coach {
 	width: auto;
 	padding: 10px;
 }
+.list-of-courses button:hover{
+	background-color: #667a66;
+	color: #ccf5cc;
+	border: 2px dotted #ccf5cc;
+	font-size: 1.3em;
+	margin: 10px;
+	font-family: sans-serif;
+	text-align: center;
+	vertical-align: center;
+	height: 50px;
+	width: auto;
+	padding: 10px;
+}
 .stud-btn span{
 	padding: 5px;
 }
 .list-of-courses span {
 	padding: 5px;
+	vertical-align: center;
+}
+.step-links a{
+	font-size: 1.2em;
+	padding: 5px;
+	border: 1px groove #ccf5cc;
+	color: #516251;
+}
+.step-links a:hover{
+	background-color: #ccf5cc;
+	color: #333;
+}
+a.active-page{
+	color: #333;
+	background-color: #ccf5cc;
+}
+.btn-info{
+	border: 2px dotted #667A66;
+	background-color: #ccf5cc;
+	color: #333;
+	vertical-align: center;
+} 
+.btn-info:hover{
+	border: 2px dotted #ccf5cc;
+	background-color: #516251;
+	color: #ccf5cc;
 	vertical-align: center;
 }

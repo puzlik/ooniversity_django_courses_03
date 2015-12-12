@@ -45,18 +45,23 @@
 </div>
 <div class="pagination">
     <span class="step-links">
-        {% if object_list.has_previous %}
-            <a href="?page={{ object_list.previous_page_number }}">previous</a>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}"><< previous</a>
         {% endif %}
 
         <span class="current">
-          {% for num in pages %}
-            <a href="?page={{ object_list.page(1) }}">{{ num }}</a>
+          {% for num_page in paginator.page_range %}
+            
+            {% if num_page == page_obj.number %}
+              <a href="" class="active-page">{{ num_page }}</a>
+            {% else %}
+              <a href="?page={{ num_page }}">{{ num_page }}</a>
+            {% endif %}
           {% endfor %}
         </span>
 
-        {% if object_list.has_next %}
-            <a href="?page={{ object_list.next_page_number }}">next</a>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next >></a>
         {% endif %}
     </span>
 </div>
