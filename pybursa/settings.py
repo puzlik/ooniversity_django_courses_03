@@ -117,3 +117,41 @@ EMAIL_PORT = 1025
 ADMINS = (('admin', 'admin@pybursa.com'), )
 
 #DEFAULT_FROM_EMAIL = 'feedback@pybursa.com'
+
+LOGGING = {
+    'version': 1,
+    'loggers':
+    {
+        'courses': {
+            'handlers': ['file_course'],
+            'level': 'DEBUG'
+        },
+        'students': {
+            'handlers': ['file_student'],
+            'level': 'DEBUG'
+        },
+    },
+    'handlers':
+    {
+        'file_course': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'courses_logger.log'),
+            'formatter': 'simple',
+        },
+        'file_student': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'students_logger.log'),
+            'formatter': 'verbose',
+        }
+    },
+    'formatters': {
+        'simple': {
+            'format': '%(levelname)s: %(message)s'
+        },
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(funcName)s %(message)s '
+        }
+    }
+}
