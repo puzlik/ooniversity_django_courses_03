@@ -6,7 +6,7 @@ from coaches.models import Coach
 from django.contrib.auth.models import User
 
 
-class CourseListTest(TestCase):
+class CoursesListTest(TestCase):
 
 	def test_course_list(self):
 		response = self.client.get('/')
@@ -46,7 +46,7 @@ class CourseListTest(TestCase):
 		success_message = {'add': u'Добавить новый курс'}
 		self.assertContains(response, success_message['add'])
 
-class CourseDetailTest(TestCase):
+class CoursesDetailTest(TestCase):
 	def test_course_detail_status_code(self):
 		coach1 = Coach.objects.create(
 								user=User.objects.create(),
