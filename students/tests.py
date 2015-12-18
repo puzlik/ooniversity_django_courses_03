@@ -55,8 +55,23 @@ class StudentsListTest(TestCase):
 	#	response3 = self.client.get('/students/1/')
 	#	self.assertTemplateUsed(response3, 'students/student_detail.html')
 
-		response4 = self.client.get('/students/edit/1/')
-		self.assertTemplateUsed(response4, 'students/student_form.html')
+	#def test_edit(self):
+	#	student1 = Student.objects.create(
+	#							name='Student1-name',
+	#							surname='Student1-surname',
+	#							date_of_birth='2015-12-15',
+	#							email='stud@pybursa.com',
+	#							phone='777-77-77',
+	#							address='Ukraine',
+	#							skype='stud1')
+	#	response = self.client.get('/students/edit/1/')
+	#	self.assertEqual(response.status_code, 200)
 
-		response5 = self.client.get('/students/remove/1/')
-		self.assertTemplateUsed(response4, 'students/student_form.html')
+	#	response2 = self.client.post('/students/edit/1/', {'name': 'Student2-name', 
+	#													'surname': 'Student2-surname',
+	#													'date_of_birth': '2015-12-16',
+	#													'email': 'stud2@pybursa.com',
+	#													#'phone': '777-67-77',
+	#													#'address': 'Ukraine',
+	#													'skype': 'stud2'})
+	#	self.assertEqual(response2.status_code, 302)
