@@ -43,9 +43,7 @@ class CoursesListTest(TestCase):
 
 	def test_course_list_add_course_button(self):
 		response = self.client.get('/')
-		success_message = {'add': u'Добавить новый курс'}
-		self.assertContains(response, success_message['add'])
-
+		self.assertContains(response, 'Добавить новый курс')
 
 class CoursesDetailTest(TestCase):
 	def test_course_detail_status_code(self):
@@ -124,7 +122,6 @@ class CoursesDetailTest(TestCase):
 						assistant=coach1)
 		response = self.client.get('/courses/1/')
 		self.assertContains(response, 'Добавить занятие')
-
 
 class CourseCreateTest(TestCase):
 	def test_course_create(self):
