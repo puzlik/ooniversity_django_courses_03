@@ -33,14 +33,14 @@
 <div class="list-of-courses">
   <h2>План курса</h2>
   <p><a href="{% url 'courses:add-lesson' course_now.id %}"><button type="button" class="btn btn-info" onclick="/"><span class="glyphicon glyphicon-plus"></span>Добавить занятие</button></a></p>
-  {% if course_now.lesson_set.all %}
+  {% if set_lessons %}
   <table>
     <tr>
       <th class="head-name">Номер</th>
       <th class="head-name">Тема</th>
       <th class="head-name">Описание</th>
     </tr>
-    {% for lesson in course_now.lesson_set.all %}
+    {% for lesson in set_lessons %}
     <tr>
       <td> {{ lesson.order }} </td>
       <td>{{ lesson.subject }} </td>
