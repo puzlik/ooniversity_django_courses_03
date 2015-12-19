@@ -129,7 +129,7 @@ LOGGING = {
         'students': {
             'handlers': ['file_student'],
             'level': 'WARNING'
-        },
+        }
     },
     'handlers':
     {
