@@ -31,7 +31,7 @@
 </div>
 <div class="clearfix"></div>
 <div class="list-of-courses">
-  <h2> План курса</h2>
+  <h2>План курса</h2>
   <p><a href="{% url 'courses:add-lesson' course_now.id %}"><button type="button" class="btn btn-info" onclick="/"><span class="glyphicon glyphicon-plus"></span>Добавить занятие</button></a></p>
   {% if course_now.lesson_set.all %}
   <table>
