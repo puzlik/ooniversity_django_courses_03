@@ -17,3 +17,6 @@ urlpatterns = patterns('',
     url(r'^quadratic/', include('quadratic.urls'), name='results'),
     url(r'^feedback/', FeedbackView.as_view(), name='feedback'),
 )
+
+handler404 = 'pybursa.views.page_not_found'
+handler500 = 'pybursa.views.internal_error'

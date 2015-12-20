@@ -77,7 +77,6 @@ class CourseDeleteView(DeleteView):
 class LessonCreateView(CreateView):
 	model = Lesson
 	template_name = 'courses/add_lesson.html'
-	print template_name
 	context_object_name = 'form'
 
 	def get_initial(self, **kwargs):

@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from courses.models import Course
+from django.template import RequestContext
+
 
 def index(request):
 	courses = Course.objects.all()
@@ -16,12 +18,14 @@ def student_list(request):
 def student_detail(request):
 	return render(request, 'student_detail.html')
 
-def handler404(request):
-    response = render_to_response('404.html')
+def page_not_found(request):
+    response = render_to_response('404.html', { 'message' : 'Sorry, page is not found' }, 
+    							  context_instance=RequestContext(request))
     response.status_code = 404
     return response
 
-def handler500(request):
-    response = render_to_response('500.html')
+def internal_error(request):
+    response = render_to_response('500.html', {'message' : 'Sorry, internal server error occurred'},
+    							  context_instance=RequestContext(request))
     response.status_code = 500
     return response
