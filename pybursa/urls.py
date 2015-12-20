@@ -1,6 +1,5 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from django.shortcuts import render
 from pybursa import views
 from feedbacks.views import FeedbackView
 
@@ -17,6 +16,3 @@ urlpatterns = patterns('',
     url(r'^quadratic/', include('quadratic.urls'), name='results'),
     url(r'^feedback/', FeedbackView.as_view(), name='feedback'),
 )
-
-handler404 = 'pybursa.views.page_not_found'
-handler500 = 'pybursa.views.internal_error'

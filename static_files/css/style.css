@@ -1,0 +1,466 @@
+body {
+	margin:0px;
+	padding:0px;
+	margin-bottom: 50px;
+}
+
+#content_container {
+	margin-left:100px;
+	margin-right:100px;
+	width: 1100px;
+	max-width: 100%;
+	height: auto;
+}
+
+#header {
+	width:1200px;
+	margin-bottom:25px;
+	float: left;
+}
+
+.header_content_mainline{
+	font-size:35px;
+	color:#000000;
+	width:700px;
+	font-style: italic;
+	margin-left:200px;
+
+}
+.header_content_mainline h1{
+	text-decoration: underline;
+}
+.header_content_boxline {
+	font-size:35px;
+	color:#000000;
+	width:400px;
+	font-style: italic;
+}
+
+#header_content_lowerline {
+	font-size:35px;
+	color:#FFFFFF;
+	width:400px;
+	font-style: italic;
+}
+
+.header_content_boxcontent {
+	font-size:12px;
+	color:#333333;
+	width:400px;
+	font-style: italic;
+}
+
+#header_content_lowerboxcontent {
+	font-size:12px;
+	color:#CCCCCC;
+	width:400px;
+}
+
+#header_content_tagline {
+	font-size:12px;
+	color:#333333;
+	width: 500px;
+}
+
+.header_lower {
+	width:400px;
+	float:left;
+	margin-right:40px;
+	margin-bottom: 50px;
+}
+
+/*Warning removing this means you must pay for this templete if you remove this you will be located and this will result in payment being required*/
+
+#copywriteblock {
+	margin-left:auto;
+	margin-right:auto;
+	width: 1000px;
+	color:#333333;
+	font-size:10px;
+	margin-top:10px;
+	text-align:right;
+	text-decoration:none;
+	margin-bottom:10px;
+}
+
+.navbar-default{
+	background-color: #252525;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover{
+	color: #ccf5cc;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus{
+  color: #191711;
+  background-color: #ccf5cc;
+}	
+
+.collapse navbar-collapse .nav navbar-nav .active {
+	background-color: #ffff4d;
+}
+
+.navbar-brand{
+	padding-top: 5px;
+	margin-top: 0;
+}
+.logo-minions{
+	width: 40px;
+	height: 40px;
+	margin: 0;
+}
+
+td{
+	text-align: center;
+	width: auto;
+	max-width: 15%;
+	height: 50px;
+	border: 1px dotted;
+	border-color: #ccf5cc;
+}
+
+.head-name{
+	text-align: center;
+	background-color: #ccf5cc;
+}
+#first-btn{
+	text-decoration: underline;
+}
+
+.btn-group{
+	background-color: #ccf5cc;
+	width: 200px;
+	border: 2px dotted;
+	border-color: #e5fdad;
+	border-radius: 20px;
+	text-align: center;
+}
+
+.contact-form{
+	height: 500px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	position: absolute;
+}
+
+table{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.lead {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/*** Contacts page settings ***/
+.tab-pane{
+	margin-top: 20px;
+	margin-left: 60px;
+	padding-left: 20px;
+	margin-bottom: 25px;
+}
+
+.container-contacts{
+	background-color: #f4e6d8;
+	margin-left: 0;
+	display: inline-block;
+}
+.contact-person{
+	background-image: url(../images/personcard.jpeg);
+	background-repeat: no-repeat;
+	background-color: #fff;
+	border: 0;
+	border-radius: 20px;
+	margin: 50px 10px;
+	width: 320px;
+	padding-left: 15px;
+	height: 200px;
+}
+#header-contacts{
+	color: #191711;
+	font-size: 2em;
+	text-align: center;
+	font-family: Comic, Sans-Serif;
+}
+
+#director .contact-name{
+	font-size: 1.3em;
+}
+
+#director{
+	font-size: 1.2em;
+}
+
+#manager{
+	font-size: 1.2em;
+}
+
+#founder{
+	font-size: 1.2em;
+}
+
+.contact-name{
+	text-decoration: underline;
+	margin-right: 10px;
+}
+.contact-skype, .contact-email, .contact-phone{
+	text-decoration: underline;
+	margin-right: 10px;
+}
+
+.contact-email{
+	text-decoration: underline;
+	margin-right: 10px;
+}
+
+.contact-phone{
+	text-decoration: underline;
+	margin-right: 10px;
+}
+
+.contact-name{
+	font-weight: bold; 
+}
+
+.position-organization {
+	color: #736c7a;
+	text-align: center;
+	text-decoration: underline;
+}
+
+#id-footer{
+	color: #ffff4d;
+	font-style: italic;
+}
+
+.student-table table{
+	background-color: #effcef;
+	border-color: #516251;
+	border: 1px;
+}
+
+.student-table table > td {
+	text-align: center;
+}
+
+.head-stud-table th{
+	background-color: #f4fdf4;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+.head-stud-table th#address{
+	width: 200px;
+}
+.head-stud-table th#skype{
+	width: 150px;
+}
+
+.student-table a{
+	color: #a3b3c4;
+}
+
+.student-table a:hover{
+	background-color: #ccf5cc;
+}
+
+.student-avatar{
+	width: 300px;
+	height: 300px;
+}
+
+.btn-group-st{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.student-table h5{
+	color: #191711;
+	font-size: 2em;
+	text-align: center;
+	font-family: Comic, Sans-Serif;
+}
+
+.student-table table > td {
+	text-align: center;
+}
+
+.head-stud-range-table th{
+	background-color: #f4fdf4;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+#full {
+	width: 500px;
+}
+
+#control_type{
+	width: 150px;
+}
+
+#full-s {
+	width: 700px;
+}
+
+.list-of-courses table{
+	background-color: #effcef;
+	padding: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	width: auto;
+}
+.list-of-courses td{
+	padding: 10px;
+	width: auto;
+	max-width: 50%;
+}
+.list-of-courses tr>th{
+	padding: 5px;
+	border: 1px solid #a3c4a3;
+}
+.list-of-courses tr, td{
+	border: 1px solid #a3c4a3;
+}
+.tutor-block div{
+	color: #191711;
+	font-size: 1.1em;
+	font-family: Comic, Sans-Serif;
+	border: 2px groove #004537;
+	background-color: #effcef;
+	margin-bottom: 25px;
+	padding-left: 10px;
+}
+.tutor-block h3{
+	background-color: #a3c4a3;
+	width: 150px;
+	text-align: center;
+}
+span.coach {
+	color: red;
+}
+.tutor-block a{
+	color: #a3b3c4;
+	font-size: 1.3em;
+}
+
+.footer-p {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	font-size: 1.1em;
+	text-align: center;
+	vertical-align: center;
+	background-color: #252525;
+	color: #ccf5cc;
+}
+
+.student-avatar-app{
+	width: 300px;
+	height: 300px;
+	text-align: center;
+	margin-top: 50px;
+}
+.img-include {
+	margin: 20px;
+}
+.img-main {
+	text-align: center;
+}
+.messages{
+	background-color: #ccf5cc;
+	color: #667a66;
+	border-color: #667a66;
+	border: 2px dotted;
+	font-size: 1.3em;
+	margin: 10px;
+	font-family: sans-serif;
+	text-align: center;
+	vertical-align: center;
+	height: 50px;
+	width: auto;
+	padding: 10px;
+}
+
+.add-stud-btn button{
+	background-color: #ccf5cc;
+	color: #667a66;
+	border: 2px dotted #667a66;
+	font-size: 1.3em;
+	margin: 10px;
+	font-family: sans-serif;
+	text-align: center;
+	vertical-align: center;
+	height: 50px;
+	width: auto;
+	padding: 10px;
+}
+.list-of-courses button{
+	background-color: #ccf5cc;
+	color: #667a66;
+	border: 2px dotted #667a66;
+	font-size: 1.3em;
+	margin: 10px;
+	font-family: sans-serif;
+	text-align: center;
+	vertical-align: center;
+	height: 50px;
+	width: auto;
+	padding: 10px;
+}
+.list-of-courses button:hover{
+	background-color: #667a66;
+	color: #ccf5cc;
+	border: 2px dotted #ccf5cc;
+	font-size: 1.3em;
+	margin: 10px;
+	font-family: sans-serif;
+	text-align: center;
+	vertical-align: center;
+	height: 50px;
+	width: auto;
+	padding: 10px;
+}
+.stud-btn span{
+	padding: 5px;
+}
+.list-of-courses span {
+	padding: 5px;
+	vertical-align: center;
+}
+.step-links a{
+	font-size: 1.2em;
+	padding: 5px;
+	border: 1px groove #ccf5cc;
+	color: #516251;
+}
+.step-links a:hover{
+	background-color: #ccf5cc;
+	color: #333;
+}
+a.active-page{
+	color: #333;
+	background-color: #ccf5cc;
+}
+.btn-info{
+	border: 2px dotted #667A66;
+	background-color: #ccf5cc;
+	color: #333;
+	vertical-align: center;
+} 
+.btn-info:hover{
+	border: 2px dotted #ccf5cc;
+	background-color: #516251;
+	color: #ccf5cc;
+	vertical-align: center;
+}
